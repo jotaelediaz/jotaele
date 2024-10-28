@@ -65,13 +65,13 @@ get_header();
 											</div>
 											
 											<div class="wrapper-meta-box wrapper-author 
-											<?php if(get_the_author_meta('nicename', get_post_field ('post_author', $post_id)) === 'jotaele') {echo 'd-none';} ?>"
+											<?php if(get_the_author_meta('nicename', get_post_field ('post_author', $post->ID)) === 'jotaele') {echo 'd-none';} ?>"
 											>
 												<i class="icon-autor"></i>
 												<?php jotaele_posted_by(); ?>
 											</div>
 											
-											<?php if(get_the_author_meta('nicename', get_post_field ('post_author', $post_id)) === 'jotaele'): ?>
+											<?php if(get_the_author_meta('nicename', get_post_field ('post_author', $post->ID)) === 'jotaele'): ?> 
 												<div class="wrapper-meta-box wrapper-readtime">
 													<i class="icon-lectura"></i>
 													<?php _e( 'Lectura: ', 'jotaele' ); echo jotaele_read_time();  _e( ' min', 'jotaele' ); ?>
@@ -120,7 +120,7 @@ get_header();
 
 	<aside id="secondary" class="widget-area">
 		<section class="related-posts-block single-related background-grey-jotaele container-fluid section-alternate-color">
-			<?php get_template_part( 'yarpp-template', 'jotaele' ); ?>
+			<?php get_template_part( 'template-parts/yarpp-template', 'jotaele' ); ?>
 		</section>
 		
 		<h2>AQUÍ VA AHORA UN BOX PARA NEWSLETTER Y LOS COMENTARIOS</h2>
