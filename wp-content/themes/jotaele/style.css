@@ -662,7 +662,9 @@ h2, .h2 {
 }
 
 .social-link-icon:hover,
-.social-link-icon:active{
+.social-link-icon:active,
+.social-thread-post:hover .social-link-icon,
+.social-thread-post:active .social-link-icon{
 	background-color: var(--jotaele-button-grey-hover);
 }
 
@@ -672,6 +674,18 @@ h2, .h2 {
 
 .social-link-icon.twitter{
 	background-image: url('img/twitter.svg');
+}
+
+.social-link-icon.bluesky{
+	background-image: url('img/bluesky.svg');
+}
+
+.social-link-icon.tiktok{
+	background-image: url('img/tiktok.svg');
+}
+
+.social-link-icon.threads{
+	background-image: url('img/threads.svg');
 }
 
 .social-link-icon.instagram{
@@ -992,6 +1006,48 @@ blockquote {
 
 .section-alternate-color {
 	padding: 4vh 0;
+}
+
+.social-thread-post {
+    margin-top: 5vh;
+    margin-bottom: 6vh;
+    border: 1px solid var(--jotaele-dark);
+	background: transparent;
+    border-radius: 15px;
+    border-style: dashed;
+	transition: 0.3s ease;
+}
+.social-thread-post:hover,
+.social-thread-post:active {
+	border: 1px solid var(--jotaele-background-grey);
+	background: var(--jotaele-background-grey);
+}
+
+.social-thread-post a {
+    display: flex;
+    align-items: center;
+	padding: 0.8rem 1rem;
+	text-decoration: none !important;
+}
+
+.social-thread-post .icon-box {
+    margin-right: 1rem;
+}
+
+.social-thread-post .icon-box i{
+    display: inline-block;
+    height: 35px;
+    width: 35px;
+    margin-left: 0;
+}
+
+.social-thread-post .title{
+    font-family: 'Sora', sans-serif;
+    font-size: 1rem;
+    color: var(--jotaele-dark);
+    text-decoration: none;
+    font-weight: 500;
+    display: block;
 }
 
 /*--------------------------------------------------------------

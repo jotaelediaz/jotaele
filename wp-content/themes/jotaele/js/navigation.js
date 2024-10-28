@@ -139,6 +139,9 @@ var first_change_header = true;
 			$('#main-menu-wrapper').removeClass("menu-expanded");
 			$('body').removeClass('scroll-locked');
 		});
+		
+		// Initialize Owl Carousel
+		$(".owl-carousel").owlCarousel();
         
 });
 })(jQuery, this);

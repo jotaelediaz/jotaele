@@ -57,7 +57,7 @@ global $post;
 	<div class="row">
 		<h3><?php _e('Artículos relacionados', 'jotaele'); ?></h3>
 	</div>
-	<div class="row">
+	<div class="row owl-carousel">
 		<?php foreach($jotaeleRelatedPosts as $jotaeleRelatedPost):
 			$post = $jotaeleRelatedPost;
 			setup_postdata( $post );

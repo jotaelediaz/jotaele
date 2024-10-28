@@ -41,7 +41,7 @@
 		</header><!-- .entry-header -->
 
 		<div class="card-text content">
-			<?php if(get_post_meta($post->ID, "entradilla")[0]): ?>
+			<?php if(get_post_meta($post->ID, "entradilla")): ?>
 				<p class="excerpt entradilla"><?php echo wp_trim_words(get_post_meta($post->ID, "entradilla")[0], 28, '…'); ?></p>
 			<?php else: ?>
 				<p class="excerpt content-trimmed"><?php echo wp_trim_words( get_the_content(), 28, '…' ); ?></p>

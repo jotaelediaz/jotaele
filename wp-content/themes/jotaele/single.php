@@ -105,11 +105,17 @@ get_header();
 									)
 								);
 								?>
+								
 							</div><!-- .entry-content -->
 
 							<footer class="entry-footer">
+								
+								<?php if( get_post_meta( $post->ID, 'has_social_thread', true ) ): ?>
+									<?php get_template_part( 'template-parts/content', 'social-thread' ); ?>
+								<?php endif; ?>
+								
 								<?php get_template_part( 'template-parts/content', 'author-info' ); ?>
-								<?php /* jotaele_entry_footer(); */ ?>
+								
 							</footer><!-- .entry-footer -->
 						</article><!-- #post-<?php the_ID(); ?> -->	
                     </div>
@@ -121,6 +127,16 @@ get_header();
 	<aside id="secondary" class="widget-area">
 		<section class="related-posts-block single-related background-grey-jotaele container-fluid section-alternate-color">
 			<?php get_template_part( 'template-parts/yarpp-template', 'jotaele' ); ?>
+		</section>
+		
+		<section class="container-fluid section-alternate-color">
+			
+			<div class="container">
+					<div class="row">
+					<h3><?php _e('¿Newsletter?', 'jotaele'); ?></h3>
+					</div>
+			</div>
+			
 		</section>
 		
 		<h2>AQUÍ VA AHORA UN BOX PARA NEWSLETTER Y LOS COMENTARIOS</h2>
