@@ -1,7 +1,6 @@
 .git/credentials
 .DS_Store
 wp-config.php
-node_modules/
 *.swp
 yarn-error.log
 .yarn/cache

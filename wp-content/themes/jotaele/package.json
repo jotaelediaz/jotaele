@@ -17,9 +17,8 @@
     "url": "https://github.com/Automattic/_s/issues"
   },
   "devDependencies": {
-    "@wordpress/scripts": "^19.2.2",
+    "@wordpress/scripts": "^30.3.0",
     "dir-archiver": "^1.1.1",
-    "node-sass": "^7.0.1",
     "rtlcss": "^3.5.0"
   },
   "rtlcssConfig": {
@@ -45,6 +44,7 @@
   },
   "main": "index.js",
   "dependencies": {
-    "bootstrap": "^5.3.0"
+    "bootstrap": "^5.3.0",
+    "sass": "^1.80.4"
   }
 }
