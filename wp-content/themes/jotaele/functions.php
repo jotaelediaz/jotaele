@@ -158,11 +158,13 @@ function jotaele_scripts() {
 	wp_enqueue_style('base-style', get_stylesheet_directory_uri().'/style-base.css', false, NULL, 'all');
 	wp_enqueue_style( 'jotaele-style', get_stylesheet_uri(), array(), _S_VERSION );
     wp_enqueue_style('bootstrap-css', get_stylesheet_directory_uri().'/node_modules/bootstrap/dist/css/bootstrap.min.css', false, NULL, 'all');
+    wp_enqueue_style('owlcarousel-css', get_stylesheet_directory_uri().'/node_modules/owl.carousel/dist/assets/owl.carousel.min.css', false, NULL, 'all');
 
 	wp_style_add_data( 'jotaele-style', 'rtl', 'replace' );
 
 	wp_enqueue_script( 'jotaele-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true );
     wp_enqueue_script('bootstrap-js', get_stylesheet_directory_uri().'/node_modules/bootstrap/dist/js/bootstrap.min.js', array('jquery'), NULL, true);
+    wp_enqueue_script('owlcarousel-js', get_stylesheet_directory_uri().'/node_modules/owl.carousel/dist/owl.carousel.min.js', array('jquery'), NULL, true);
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
