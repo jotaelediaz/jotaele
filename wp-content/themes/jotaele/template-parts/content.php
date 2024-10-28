@@ -10,6 +10,9 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+    
+    <?php echo get_the_post_thumbnail('large'); ?>
+    
 	<header class="entry-header">
 		<?php
 		if ( is_singular() ) :
@@ -29,7 +32,7 @@
 		<?php endif; ?>
 	</header><!-- .entry-header -->
 
-	<?php jotaele_post_thumbnail(); ?>
+
 
 	<div class="entry-content">
 		<?php
@@ -37,7 +40,7 @@
 			sprintf(
 				wp_kses(
 					/* translators: %s: Name of current post. Only visible to screen readers */
-					__( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'jotaele' ),
+					__( 'Continuar leyendo<span class="screen-reader-text"> "%s"</span>', 'jotaele' ),
 					array(
 						'span' => array(
 							'class' => array(),

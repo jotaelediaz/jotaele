@@ -131,20 +131,38 @@ function jotaele_widgets_init() {
 			'after_title'   => '</h2>',
 		)
 	);
+	register_sidebar(
+		array(
+			'name'          => esc_html__( 'Sidebar Busqueda', 'jotaele' ),
+			'id'            => 'search-bar',
+			'description'   => esc_html__( 'Buscar', 'jotaele' ),
+		)
+	);
 }
 add_action( 'widgets_init', 'jotaele_widgets_init' );
+
+function jotaele_register_nav_menu(){
+	register_nav_menus( array(
+		'footer_menu_1'  => __( 'Footer Menu 1', 'jotaele' ),
+		'footer_menu_2'  => __( 'Footer Menu 2', 'jotaele' ),
+		'footer_menu_3'  => __( 'Footer Menu 3', 'jotaele' ),
+		'footer_menu_legal'  => __( 'Footer Menu Legal', 'jotaele' ),
+	) );
+}
+add_action( 'after_setup_theme', 'jotaele_register_nav_menu', 0 );
 
 /**
  * Enqueue scripts and styles.
  */
 function jotaele_scripts() {
+	wp_enqueue_style('base-style', get_stylesheet_directory_uri().'/style-base.css', false, NULL, 'all');
 	wp_enqueue_style( 'jotaele-style', get_stylesheet_uri(), array(), _S_VERSION );
-    wp_enqueue_style('bootstrap-css', get_stylesheet_directory_uri().'/node_modules/bootstrap/css/bootstrap.min.css', false, NULL, 'all');
+    wp_enqueue_style('bootstrap-css', get_stylesheet_directory_uri().'/node_modules/bootstrap/dist/css/bootstrap.min.css', false, NULL, 'all');
 
 	wp_style_add_data( 'jotaele-style', 'rtl', 'replace' );
 
 	wp_enqueue_script( 'jotaele-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true );
-    wp_enqueue_script('bootstrap-js', get_stylesheet_directory_uri().'/node_modules/bootstrap/js/bootstrap.min.js', array('jquery'), NULL, true);
+    wp_enqueue_script('bootstrap-js', get_stylesheet_directory_uri().'/node_modules/bootstrap/dist/js/bootstrap.min.js', array('jquery'), NULL, true);
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
@@ -178,4 +196,3 @@ require get_template_directory() . '/inc/customizer.php';
 if ( defined( 'JETPACK__VERSION' ) ) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
-
