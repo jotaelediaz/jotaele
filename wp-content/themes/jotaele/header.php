@@ -75,7 +75,7 @@
 							<span class="title-main-menu"><?php bloginfo( 'name' ); ?></span>
 						</a>
 						<div class="close-menu-wrapper">
-							<button type="button" class="close-menu-toggle search-menu-toggle header-button" aria-controls="search-menu" aria-expanded="false" aria-labelledby="search-close-label"><i class="close-icon"></i><span id="search-close-label" hidden><?php esc_html_e( 'Cerrar menú de búsqueda', 'jotaele' ); ?></span></button>
+							<button type="button" class="close-menu-toggle primary-menu-close header-button" aria-controls="search-menu" aria-expanded="false" aria-labelledby="search-close-label"><i class="close-icon"></i><span id="search-close-label" hidden><?php esc_html_e( 'Cerrar menú de búsqueda', 'jotaele' ); ?></span></button>
 						</div>
 					</div>
 					<div class="search-and-nav">

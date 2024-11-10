@@ -141,7 +141,20 @@ var first_change_header = true;
 		});
 		
 		// Initialize Owl Carousel
-		$(".owl-carousel").owlCarousel();
+		$(".owl-carousel").owlCarousel({
+		    nav:true,
+    		responsive:{
+				0:{
+					items:1
+				},
+				768:{
+					items:3
+				},
+				991:{
+					items:3
+				}
+			}
+		});
         
 });
 })(jQuery, this);

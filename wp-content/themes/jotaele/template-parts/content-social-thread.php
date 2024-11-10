@@ -20,10 +20,10 @@
 		</div>
 		<div class="description">
 			<span class="title">
-				<?php _e('Este contenido fue publicado originalmente como un ' . $socialThreadType . ' en ' . $socialThread['label'] . '.', 'jotaele'); ?>
+				<?php _e('Este contenido fue publicado también como un ' . $socialThreadType . ' en ' . $socialThread['label'] . '.', 'jotaele'); ?>
 			</span>
 			<span class="link">
-				<?php _e('Pulsa aquí si deseas consultar también el contenido en esta red social.', 'jotaele'); ?>
+				<?php _e('Pulsa aquí si deseas consultar el contenido en esta red social.', 'jotaele'); ?>
 			</span>
 		</div>
 	</a>

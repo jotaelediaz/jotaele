@@ -255,6 +255,7 @@ Text Domain: jotaele
     justify-content: space-between;
     padding: 1.5rem 1rem;
 	height: 5rem;
+	z-index: 9999;
     position: absolute;
 	width: 100%;
 	top: 0;
@@ -500,8 +501,10 @@ html {
 
 body.scroll-locked {
 	height: 100vh;
+	width: 100vw;
 	overflow-y: hidden;
 	position: fixed;
+
 }
 
 h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
@@ -557,7 +560,7 @@ h2, .h2 {
 	
 }
 
-.categories-wrapper {
+#article-content .categories-wrapper {
     margin: 1.5rem 0 0.7rem 0;
     max-width: calc(100% - 80px);
 }
@@ -779,12 +782,36 @@ li.widget {
   }
 }
 
+.section-title {
+    color: var(--jotaele-dark);
+    text-align: center;
+    margin-bottom: 2.1rem;
+    font-weight: 600;
+    font-size: 1.8rem;
+}
+
+.section-title:before,
+.section-title:after {
+    height: 15px;
+    width: 15px;
+    display: inline-block;
+    content: '';
+    background: var(--jotaele-teal);
+    margin: 0 0.7rem;
+    box-sizing: border-box;
+    position: relative;
+    transition: 0s;
+    vertical-align: middle;
+}	
+
 /*--------------------------------------------------------------
 # Single
 --------------------------------------------------------------*/
 
 body.single-post article.post {
 	padding: 0 0;
+	display: flex;
+	flex-direction: column;
 }
 
 body.single-post .wrapper-thumbnail img {
@@ -1050,25 +1077,160 @@ blockquote {
     display: block;
 }
 
+.carousel-related-single .owl-stage{
+	display: flex;
+}
+
+.carousel-related-single .carousel-elem {
+    padding: 0 1rem !important;
+	height: 100%;
+}
+
+.carousel-related-single .owl-item:first-child > .carousel-elem{
+	padding-left: 0 !important;
+}
+
+.carousel-related-single .owl-item:last-child > .carousel-elem{
+	padding-right: 0 !important;
+}
+
 /*--------------------------------------------------------------
 # Archives
 --------------------------------------------------------------*/
 
 .archive-card {
-	border: 2px solid var(--jotaele-dark);
-	padding: 1.5rem !important;
-	height: 100%;
-	border-radius: 20px;
-}
-
-.archive-card a {
-	color: var(--jotaele-black);
-	text-decoration: none;
+    border: 2px solid var(--jotaele-dark);
+    height: 100%;
+    border-radius: 15px;
+    margin: 0 0 !important;
+    background: var(--jotaele-white);
+	overflow: hidden;
 }
 
 .archive-card .entry-title {
 	font-size: 1.3rem;
-	line-height: 1.3em;
+	line-height: 1.4em;
+}
+
+.archive-card .card-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+	padding: 1.2rem 1.2rem;
+}
+
+.archive-card .card-body .super-wrapper {
+	margin-bottom: 1rem;
+}
+
+.archive-card .categories-wrapper .category-tag{
+    font-size: 0.9rem;
+    margin-bottom: 0.7rem;
+    margin-right: 0.6rem;
+}
+
+.archive-card .entry-title:after{
+    content: '';
+    display: block;
+    border-top: 2px solid var(--jotaele-dark);
+    width: 25%;
+    height: 1px;
+    margin-top: 0.8rem;
+    margin-bottom: 0.8rem;
+}
+
+.archive-card .entry-meta{
+	display: flex;
+    justify-content: space-between;
+}
+
+
+.archive-card .entry-meta .wrapper-meta-box{
+	margin-right: 0;
+    display: flex;
+    align-items: center;
+}
+
+.archive-card .entry-meta .wrapper-meta-box.wrapper-likes{
+	flex-direction: row-reverse;
+}
+
+.archive-card .entry-meta .wrapper-meta-box.wrapper-likes i{
+	margin-left: 0.3rem;
+}
+
+.archive-card .entry-meta .wrapper-meta-box.wrapper-date i{
+	margin-right: 0.3rem;
+}
+
+.archive-card .card-header {
+    height: 30vh;
+    display: block;
+}
+
+.archive-card .card-header .wrapper-thumbnail-img {
+	display: block;
+    height: 100%;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+.archive-card .card-header .wrapper-thumbnail-img img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    display: block;
+    position: absolute;
+}
+
+.archive-card .excerpt {
+    margin: 1rem 0 0 0;
+    line-height: 1.5rem;
+    font-size: 1rem;
+}
+
+.read-more-button a {
+	display: flex;
+    align-items: center;
+	text-decoration: none;
+}
+
+.read-more-button span{
+    font-family: 'Sora';
+    font-weight: 600;
+    color: var(--jotaele-dark);
+    display: block;
+    margin: 0 0;
+    padding: 0 0;
+    font-size: 1.1rem;
+    line-height: 1.2rem;
+}
+
+.read-more-button .arrow-icon{
+    display: inline-block;
+    width: 1rem;
+    height: 0.7rem;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    vertical-align: sub;
+    margin-left: 0.4rem;
+}
+
+.arrow-icon{
+    background-image: url(img/arrow.svg);
+}
+
+.square-jota-bullet {
+	height: 0.8rem;
+    width: 0.8rem;
+    display: block;
+    border: 3px solid var(--jotaele-teal);
+    margin-right: 8px;
+    box-sizing: border-box;
+    position: relative;
+    transition: 0s;
 }
 
 /*--------------------------------------------------------------

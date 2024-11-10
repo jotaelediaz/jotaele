@@ -55,19 +55,21 @@ global $post;
 <div class="container">
 	
 	<div class="row">
-		<h3><?php _e('Artículos relacionados', 'jotaele'); ?></h3>
+		<h3 class="section-title"><?php _e('Artículos relacionados', 'jotaele'); ?></h3>
 	</div>
-	<div class="row owl-carousel">
-		<?php foreach($jotaeleRelatedPosts as $jotaeleRelatedPost):
-			$post = $jotaeleRelatedPost;
-			setup_postdata( $post );
-		?>
-		
-			<div class="col-md-4 col-12">
-				<?php get_template_part( 'template-parts/content-archive', get_post_type() ); ?>	
-			</div>
-		
-		<?php endforeach; wp_reset_postdata(); ?>
+	<div class="row">
+		<div class="owl-carousel carousel-related-single">
+			<?php foreach($jotaeleRelatedPosts as $jotaeleRelatedPost):
+				$post = $jotaeleRelatedPost;
+				setup_postdata( $post );
+			?>
+
+				<div class="carousel-elem">
+					<?php get_template_part( 'template-parts/content-archive', get_post_type() ); ?>	
+				</div>
+
+			<?php endforeach; wp_reset_postdata(); ?>
+		</div>
 	</div>
 	<div class="row">
 		BOTON DE MÁS POSTS (A LA HOME?)
