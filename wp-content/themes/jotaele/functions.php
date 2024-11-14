@@ -147,6 +147,7 @@ function jotaele_register_nav_menu(){
 		'footer_menu_2'  => __( 'Footer Menu 2', 'jotaele' ),
 		'footer_menu_3'  => __( 'Footer Menu 3', 'jotaele' ),
 		'footer_menu_legal'  => __( 'Footer Menu Legal', 'jotaele' ),
+		'footer_menu_cookies'  => __( 'Footer Cookies', 'jotaele' ),
 	) );
 }
 add_action( 'after_setup_theme', 'jotaele_register_nav_menu', 0 );

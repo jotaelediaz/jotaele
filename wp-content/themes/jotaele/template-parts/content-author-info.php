@@ -28,6 +28,9 @@
 						<?php /* if(get_the_author_url()):
 							<a href="<?php echo get_the_author_url(); ?>" target="_blank"><i class="social-link-icon webwww"></i></a>
 						<?php endif; */ ?>
+						<?php if(get_the_author_meta('bluesky')): ?>
+							<a href="<?php echo get_the_author_meta('bluesky'); ?>" target="_blank" rel="noopener"><i class="social-link-icon bluesky"></i></a>
+						<?php endif; ?>
 						<?php if(get_the_author_meta('twitter')): ?>
 							<a href="<?php echo get_the_author_meta('twitter'); ?>" target="_blank" rel="noopener"><i class="social-link-icon twitter"></i></a>
 						<?php endif; ?>

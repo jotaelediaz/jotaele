@@ -142,16 +142,21 @@ var first_change_header = true;
 		
 		// Initialize Owl Carousel
 		$(".owl-carousel").owlCarousel({
-		    nav:true,
+			dots:true,
     		responsive:{
 				0:{
-					items:1
+					items:1,
+					margin:20,
 				},
 				768:{
-					items:3
+					items:3,
+					nav:true,
+					margin:20,
 				},
 				991:{
-					items:3
+					items:3,
+					nav:true,
+					margin:20,
 				}
 			}
 		});

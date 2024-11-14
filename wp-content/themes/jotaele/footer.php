@@ -33,7 +33,7 @@
 								<nav id="footer-menu-tres" class="legal-menu"><?php wp_nav_menu(array('theme_location' => 'footer_menu_legal',)); ?></nav>
 							</div>
 							
-							<span class="no-cooks"><i class="no-cooks-icon"></i> Este sitio web no utiliza cookies publicitarias ni otros métodos de rastreo.</span>
+							<span class="no-cooks"><i class="no-cooks-icon"></i> Este sitio web no utiliza cookies publicitarias ni otros métodos de rastreo. <?php wp_nav_menu(array('theme_location' => 'footer_menu_cookies',)); ?></span>
 						</div>
 					</div>
 					<div class="footer-right">

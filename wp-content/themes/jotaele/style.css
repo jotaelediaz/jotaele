@@ -3,7 +3,7 @@ Theme Name: JotaEle
 Theme URI: http://jotaele.me/
 Author: JotaEle Díaz
 Author URI: http://jotaele.me/
-Description: Tema para la web de JotaEle
+Description: Tema para la web de JotaEle Díaz	
 Version: 1.0.0
 Tested up to: 5.4
 Requires PHP: 5.6
@@ -518,7 +518,7 @@ h1, .h1 {
     font-stretch: normal;
     line-height: 1.15;
     letter-spacing: normal;
-    color: #372e2c;
+    color: var(--jotaele-black);
     margin-bottom: 1.5rem;
 }
 
@@ -529,7 +529,7 @@ h2, .h2 {
     font-stretch: normal;
     line-height: 1.25;
     letter-spacing: normal;
-    color: #3d3d3d;
+    color: var(--jotaele-black);
     margin-bottom: 1.5rem;
 }
 
@@ -537,7 +537,7 @@ h2, .h2 {
     display: inline-block;
     background: #f0deee;
     color: white;
-    color: #c64fad;
+    color: var(--jotaele-black);
     text-decoration: none;
     font-weight: 400;
     letter-spacing: -1px;
@@ -790,20 +790,6 @@ li.widget {
     font-size: 1.8rem;
 }
 
-.section-title:before,
-.section-title:after {
-    height: 15px;
-    width: 15px;
-    display: inline-block;
-    content: '';
-    background: var(--jotaele-teal);
-    margin: 0 0.7rem;
-    box-sizing: border-box;
-    position: relative;
-    transition: 0s;
-    vertical-align: middle;
-}	
-
 /*--------------------------------------------------------------
 # Single
 --------------------------------------------------------------*/
@@ -962,6 +948,14 @@ body.user_voted .vote-counter-wrapper .thank-you{
 	background-image: url('img/like.svg');
 }
 
+.wrapper-meta-box i.icon-likes-full{
+	background-image: url('img/like-full.svg');
+}
+
+.wrapper-meta-box i.icon-likes-gold{
+	background-image: url('img/like-gold.svg');
+}
+
 .wrapper-meta-box a{
 	color: var(--jotaele-black);
 	text-decoration: none;
@@ -1077,22 +1071,6 @@ blockquote {
     display: block;
 }
 
-.carousel-related-single .owl-stage{
-	display: flex;
-}
-
-.carousel-related-single .carousel-elem {
-    padding: 0 1rem !important;
-	height: 100%;
-}
-
-.carousel-related-single .owl-item:first-child > .carousel-elem{
-	padding-left: 0 !important;
-}
-
-.carousel-related-single .owl-item:last-child > .carousel-elem{
-	padding-right: 0 !important;
-}
 
 /*--------------------------------------------------------------
 # Archives
@@ -1109,31 +1087,68 @@ blockquote {
 
 .archive-card .entry-title {
 	font-size: 1.3rem;
-	line-height: 1.4em;
+    line-height: 1.4em;
+    margin: 0 0 0.5rem 0;
+	transition: ease 0.3s;
 }
 
 .archive-card .card-body {
+	display: flex;
+    flex-direction: column;
+}
+
+.archive-card .card-body .link-wrapper {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-	padding: 1.2rem 1.2rem;
+    flex-grow: 1;
+	padding: 0 1.5rem 1.5rem 1.5rem;
+	text-decoration: none;
 }
 
-.archive-card .card-body .super-wrapper {
-	margin-bottom: 1rem;
+.archive-card .card-body .link-wrapper:hover .read-more-button > span,
+.archive-card .card-body .link-wrapper:active .read-more-button > span {
+
+}
+
+.archive-card .card-body .link-wrapper:hover .read-more-button .arrow-icon {
+	margin-left: 1rem;
+}
+
+.archive-card .card-body .link-wrapper:active .read-more-button .arrow-icon {
+	margin-left: 0.7rem;
+}
+ 
+.archive-card .card-body .link-wrapper:hover .square-jota-bullet,
+.archive-card .card-body .link-wrapper:active .square-jota-bullet {
+    border: 6.5px solid var(--jotaele-teal);
+}
+
+.archive-card .card-body .link-wrapper:hover .entry-title,
+.archive-card .card-body .link-wrapper:active .entry-title {
+	color: var(--jotaele-text-grey) !important;
+}
+
+.read-more-button {
+	margin-top: 1.2rem;
+}
+
+.archive-card .categories-likes {
+	padding: 1rem 1.5rem 0.8rem 1.5rem;
 }
 
 .archive-card .categories-wrapper .category-tag{
-    font-size: 0.9rem;
-    margin-bottom: 0.7rem;
-    margin-right: 0.6rem;
+	font-size: 0.9rem;
+    margin-bottom: 0rem;
+    margin-right: 0.5rem;
+    padding: 0.06rem 1rem !important;
 }
 
-.archive-card .entry-title:after{
-    content: '';
+.archive-card .entry-header:after{
+	content: '';
     display: block;
     border-top: 2px solid var(--jotaele-dark);
-    width: 25%;
+    width: 20%;
     height: 1px;
     margin-top: 0.8rem;
     margin-bottom: 0.8rem;
@@ -1142,8 +1157,8 @@ blockquote {
 .archive-card .entry-meta{
 	display: flex;
     justify-content: space-between;
+	align-items: center;
 }
-
 
 .archive-card .entry-meta .wrapper-meta-box{
 	margin-right: 0;
@@ -1163,34 +1178,57 @@ blockquote {
 	margin-right: 0.3rem;
 }
 
+.archive-card .vote_counter {
+}
+
 .archive-card .card-header {
     height: 30vh;
     display: block;
+	border-bottom: 2px solid var(--jotaele-dark);
+}
+
+.archive-card .card-header {
+    height: 33vh;
+    display: block;
+	overflow: hidden;
+	border-bottom: 2px solid var(--jotaele-dark);
 }
 
 .archive-card .card-header .wrapper-thumbnail-img {
-	display: block;
-    height: 100%;
-    width: 100%;
+    display: block;
+    height: calc(100% + 1px);
+    width: calc(100% + 1px);
+    top: -1px;
+    left: 0px;
     position: relative;
     overflow: hidden;
 }
 
 .archive-card .card-header .wrapper-thumbnail-img img {
-    height: 100%;
-    width: 100%;
+    height: 101%;
+    width: 101%;
     object-fit: cover;
     display: block;
     position: absolute;
+	transition: ease 0.3s;
 }
 
+.archive-card:hover .card-header .wrapper-thumbnail-img img {
+    transform: scale(1.1);
+}
+
+.archive-card:has(.categories-likes:hover) .card-header .wrapper-thumbnail-img img{
+    transform: scale(1) !important;
+}
+
+
 .archive-card .excerpt {
-    margin: 1rem 0 0 0;
+    margin: 0 0 0 0;
     line-height: 1.5rem;
     font-size: 1rem;
 }
 
-.read-more-button a {
+.read-more-button{
 	display: flex;
     align-items: center;
 	text-decoration: none;
@@ -1198,13 +1236,15 @@ blockquote {
 
 .read-more-button span{
     font-family: 'Sora';
-    font-weight: 600;
+    font-weight: 500;
     color: var(--jotaele-dark);
     display: block;
     margin: 0 0;
     padding: 0 0;
-    font-size: 1.1rem;
-    line-height: 1.2rem;
+    font-size: 1rem;
+    line-height: 1rem;
+	letter-spacing: 0px;
+	transition: ease 0.3s;
 }
 
 .read-more-button .arrow-icon{
@@ -1216,6 +1256,7 @@ blockquote {
     background-repeat: no-repeat;
     vertical-align: sub;
     margin-left: 0.4rem;
+	transition: ease 0.3s;
 }
 
 .arrow-icon{
@@ -1230,7 +1271,7 @@ blockquote {
     margin-right: 8px;
     box-sizing: border-box;
     position: relative;
-    transition: 0s;
+    transition: ease 0.3s;
 }
 
 /*--------------------------------------------------------------

@@ -36,17 +36,18 @@ if ( isset( $_wp_additional_image_sizes['yarpp-thumbnail'] ) ) {
 
 $jotaeleRelatedPosts = yarpp_get_related(
 	array(
-		'limit' => 4,
-		'threshold' => 4,
+		'limit' => 6,
+		'threshold' => 1,
+		'post_type' => 'post',
+		'order' => 'score DESC',
 		'weight' => array(
 			'title' => 1,
 			'body' => 1,
 			'tax' => array(
-				'category' => 1,
-				'tag' => 2,
+				'category' => 2,
+				'tag' => 3,
 			)
 		),
-		'post_type' => 'post',
 	)
 );
 
@@ -72,6 +73,8 @@ global $post;
 		</div>
 	</div>
 	<div class="row">
-		BOTON DE MÁS POSTS (A LA HOME?)
+		<button>
+			BOTON DE MÁS POSTS
+		</button>
 	</div>
 </div>
