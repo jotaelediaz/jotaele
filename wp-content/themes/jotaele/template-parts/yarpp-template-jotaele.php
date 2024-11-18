@@ -56,25 +56,36 @@ global $post;
 <div class="container">
 	
 	<div class="row">
-		<h3 class="section-title"><?php _e('Artículos relacionados', 'jotaele'); ?></h3>
-	</div>
-	<div class="row">
-		<div class="owl-carousel carousel-related-single">
-			<?php foreach($jotaeleRelatedPosts as $jotaeleRelatedPost):
-				$post = $jotaeleRelatedPost;
-				setup_postdata( $post );
-			?>
-
-				<div class="carousel-elem">
-					<?php get_template_part( 'template-parts/content-archive', get_post_type() ); ?>	
-				</div>
-
-			<?php endforeach; wp_reset_postdata(); ?>
+		<div class="section-title-wrapper">
+			<h3 class="section-title"><?php _e('Artículos relacionados', 'jotaele'); ?></h3>
+			<span class="section-subtitle">Prueba de subtítulo</span>
 		</div>
 	</div>
 	<div class="row">
-		<button>
-			BOTON DE MÁS POSTS
-		</button>
+		<div class="position-relative">
+			<div class="owl-carousel carousel-related-single">
+				<?php foreach($jotaeleRelatedPosts as $jotaeleRelatedPost):
+					$post = $jotaeleRelatedPost;
+					setup_postdata( $post );
+				?>
+
+					<div class="carousel-elem">
+						<?php get_template_part( 'template-parts/content-archive', get_post_type() ); ?>	
+					</div>
+
+				<?php endforeach; wp_reset_postdata(); ?>
+			</div>
+			<div class="owl-jota-nav"></div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="dots-container">
+			<div class="owl-jota-dots"></div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="cta-container">
+			<a class="button-cta-jota" href="<?php echo get_permalink( get_option( 'page_for_posts' ) ); ?>">Ver más artículos</a>
+		</div>
 	</div>
 </div>

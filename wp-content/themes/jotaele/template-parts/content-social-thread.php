@@ -1,9 +1,7 @@
 <?php
 /**
- * Template part for displaying posts
- *
- * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
- *
+ * Template part for social threads linked to articles
+ * 
  * @package jotaele
  */
 

@@ -22,7 +22,7 @@
 						<div class="desc-text-wrapper">
 							<span class="footer-desc-title d-block"><?php _e('¡Gracias por leerme! 👋'); ?></span>
 							<span class="footer-desc-subtitle d-block">
-								<?php _e('JotaTeca es un blog sobre branding, diseño, trenes y otras curiosidades.'); ?>
+								<?php _e('JotaTeca es un blog donde hablo de branding, diseño, trenes y todo aquello que me llama la atención.'); ?>
 							</span>
 						</div>
 					</div>
@@ -33,7 +33,7 @@
 								<nav id="footer-menu-tres" class="legal-menu"><?php wp_nav_menu(array('theme_location' => 'footer_menu_legal',)); ?></nav>
 							</div>
 							
-							<span class="no-cooks"><i class="no-cooks-icon"></i> Este sitio web no utiliza cookies publicitarias ni otros métodos de rastreo. <?php wp_nav_menu(array('theme_location' => 'footer_menu_cookies',)); ?></span>
+							<span class="no-cooks"><i class="no-cooks-icon"></i><span><?php _e('Este sitio web no utiliza cookies publicitarias ni otros métodos de rastreo.'); ?> <?php wp_nav_menu(array('theme_location' => 'footer_menu_cookies',)); ?></span></span>
 						</div>
 					</div>
 					<div class="footer-right">

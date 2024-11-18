@@ -114,15 +114,15 @@ get_header();
 			<?php get_template_part( 'template-parts/yarpp-template', 'jotaele' ); ?>
 		</section>
 		
-		<section class="container-fluid section-alternate-color">
+		<section class="container-fluid section-jotacolorful-background section-alternate-color">
 			
-			<div class="container">
-					<div class="row">
-					<h3><?php _e('¿Newsletter?', 'jotaele'); ?></h3>
-					</div>
-			</div>
+			<?php get_template_part( 'template-parts/content', 'shareit-cta-block' ); ?>
 			
 		</section>
+		
+		
+		<h2>TODO: ARREGLAR BLOQUES META EN ENTRADILLA CON FECHAS NOMBRE LARGO PARA MÓVILES</h2>
+
 		
 		<h2>AQUÍ VA AHORA UN BOX PARA NEWSLETTER Y LOS COMENTARIOS</h2>
 		

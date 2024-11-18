@@ -142,22 +142,45 @@ var first_change_header = true;
 		
 		// Initialize Owl Carousel
 		$(".owl-carousel").owlCarousel({
-			dots:true,
+			dotsContainer: '.owl-jota-dots',
+			navContainer: '.owl-jota-nav',
+			navText: ['<span label="Retroceder carrusel">←</span>','<span label="Avanzar carrusel">→</span>'],
+			onInitialized: function() {
+				// Equalize heights of articles inside carousel. I hate to do it this using JS, but I couldn't find any better way.
+				var mOwlheight = Math.max.apply(null, $(".owl-item .archive-card").map(function () { return $(this).height();}).get());
+				$(".owl-item article").height(mOwlheight);
+    		},
     		responsive:{
 				0:{
 					items:1,
 					margin:20,
+					dots:true,
+					nav:false,
+					loop:true
 				},
 				768:{
-					items:3,
+					items:2,
+					margin:30,
+					dots:false,
 					nav:true,
-					margin:20,
+					loop:false,
 				},
 				991:{
 					items:3,
+					margin:30,
+					dots:false,
 					nav:true,
-					margin:20,
+					loop:false,
 				}
+			}
+		});
+		
+		// Carousel keyboard navigation
+		$(document).keyup(function (event) {    
+			if (event.keyCode === 37) {
+			   $(".owl-carousel").trigger('prev.owl.carousel');
+			} else if (event.keyCode == 39) {
+			   $(".owl-carousel").trigger('next.owl.carousel');
 			}
 		});
         
