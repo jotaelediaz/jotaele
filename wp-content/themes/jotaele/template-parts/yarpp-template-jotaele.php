@@ -58,7 +58,7 @@ global $post;
 	<div class="row">
 		<div class="section-title-wrapper">
 			<h3 class="section-title"><?php _e('Artículos relacionados', 'jotaele'); ?></h3>
-			<span class="section-subtitle">Prueba de subtítulo</span>
+			<span class="section-subtitle"><?php _e('Prueba de subtítulo', 'jotaele'); ?></span>
 		</div>
 	</div>
 	<div class="row">
@@ -84,8 +84,8 @@ global $post;
 		</div>
 	</div>
 	<div class="row">
-		<div class="cta-container">
-			<a class="button-cta-jota" href="<?php echo get_permalink( get_option( 'page_for_posts' ) ); ?>">Ver más artículos</a>
+		<div class="section-cta-container">
+			<a class="button-cta-jota" href="<?php echo get_permalink( get_option( 'page_for_posts' ) ); ?>"><?php _e('Ver más artículos', 'jotaele'); ?></a>
 		</div>
 	</div>
 </div>

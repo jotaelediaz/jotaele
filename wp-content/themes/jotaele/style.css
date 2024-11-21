@@ -792,7 +792,7 @@ li.widget {
 .section-title {
     color: var(--jotaele-dark);
     font-weight: 550;
-    font-size: 1.6rem;
+    font-size: 1.8rem;
 	margin-bottom: 0;
 }
 
@@ -807,7 +807,6 @@ li.widget {
 
 .button-cta-jota {
 	display: inline-block;
-	margin: 0 auto;
 	padding: 0.7rem 4rem;
 	padding-top: 0.8rem;
 	width: auto !important;
@@ -844,10 +843,6 @@ li.widget {
 	background: var(--jotaele-dark-hover);
 	border: 2px solid var(--jotaele-dark-hover);
 	color: var(--jotaele-white);
-}
-
-.cta-container{
-	text-align: center;
 }
 
 /*--------------------------------------------------------------
@@ -923,6 +918,7 @@ body.user_voted .vote-counter-wrapper .thank-you{
     position: absolute;
 	clip-path: inset(45px 0px 0px 0px);
 	transition: clip-path 1s;
+	will-change: auto;
 }
 
 .jotaele-likes-voter.user_voted .heartfull,
@@ -1004,15 +1000,15 @@ body.user_voted .vote-counter-wrapper .thank-you{
 	background-image: url('img/escribir.svg');
 }
 
-.wrapper-meta-box i.icon-likes{
+i.icon-likes{
 	background-image: url('img/like.svg');
 }
 
-.wrapper-meta-box i.icon-likes-full{
+i.icon-likes-full{
 	background-image: url('img/like-full.svg');
 }
 
-.wrapper-meta-box i.icon-likes-gold{
+i.icon-likes-gold{
 	background-image: url('img/like-gold.svg');
 }
 
@@ -1408,14 +1404,72 @@ blockquote {
 	background: var(--jotaele-teal);
 }
 
-.related-posts-block .cta-container{
-	margin-top: 5vh;
+.section-cta-container{
+	margin-top: 5vh !important;
+	text-align: center;
 }
 
 /* -- Newsletter block -- */
 
 .section-jotacolorful-background{
 	background-color: var(--jotaele-background-accent) !important;
+}
+
+.shareit-block {
+	background: var(--jotaele-white);
+	border: 2px solid var(--jotaele-teal);
+	border-radius: 15px;
+	margin-right: 0.3rem;
+	padding: 1.5rem;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	height: 100%;
+}
+
+.shareit-block .shareit-icon i{
+    height: 3rem;
+	width: 3rem;
+    display: block;
+	background-repeat: no-repeat;
+	margin-bottom: 0.7rem;
+}
+
+.shareit-block .title {
+	display: block;
+	font-family: 'Sora', sans-serif;
+	color: var(--jotaele-dark);
+	font-weight: 500;
+	font-size: 1.3rem;
+    line-height: 1.4em;
+	margin-bottom: 0.5rem;
+}
+
+.shareit-block .txt {
+	display: block;
+	margin-bottom: 1.1rem;
+}
+
+i.icon-repost{
+	background: url(img/repost.svg);
+}
+
+i.icon-buzon{
+	background: url(img/buzon.svg);
+}
+
+.shareit-block .shareit-icon i.icon-likes {
+	height: 3rem;
+	width: 3rem;
+}
+
+.shareit-block .shareit-icon i.icon-repost {
+	height: 2.6rem;
+}
+
+.shareit-block .shareit-icon i.icon-buzon {
+    height: 3rem;
+    width: 3.5rem;
 }
 
 /*--------------------------------------------------------------

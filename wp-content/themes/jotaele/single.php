@@ -123,9 +123,7 @@ get_header();
 		
 		<h2>TODO: ARREGLAR BLOQUES META EN ENTRADILLA CON FECHAS NOMBRE LARGO PARA MÓVILES</h2>
 
-		
-		<h2>AQUÍ VA AHORA UN BOX PARA NEWSLETTER Y LOS COMENTARIOS</h2>
-		
+			
 									
 		<?php
 		if ( comments_open() || get_comments_number() ) :

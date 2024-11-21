@@ -29,28 +29,28 @@
 							<a href="<?php echo get_the_author_url(); ?>" target="_blank"><i class="social-link-icon webwww"></i></a>
 						<?php endif; */ ?>
 						<?php if(get_the_author_meta('bluesky')): ?>
-							<a href="<?php echo get_the_author_meta('bluesky'); ?>" target="_blank" rel="noopener"><i class="social-link-icon bluesky"></i></a>
+							<a href="<?php echo get_the_author_meta('bluesky'); ?>" target="_blank" title="BlueSky" rel="noopener"><i class="social-link-icon bluesky"></i></a>
 						<?php endif; ?>
 						<?php if(get_the_author_meta('twitter')): ?>
-							<a href="<?php echo get_the_author_meta('twitter'); ?>" target="_blank" rel="noopener"><i class="social-link-icon twitter"></i></a>
+							<a href="<?php echo get_the_author_meta('twitter'); ?>" target="_blank" title="Twitter" rel="noopener"><i class="social-link-icon twitter"></i></a>
 						<?php endif; ?>
 						<?php if(get_the_author_meta('instagram')): ?>
-							<a href="<?php echo get_the_author_meta('instagram'); ?>" target="_blank" rel="noopener"><i class="social-link-icon instagram"></i></a>
+							<a href="<?php echo get_the_author_meta('instagram'); ?>" target="_blank" title="Instagram" rel="noopener"><i class="social-link-icon instagram"></i></a>
 						<?php endif; ?>
 						<?php if(get_the_author_meta('linkedin')): ?>
-							<a href="<?php echo get_the_author_meta('linkedin'); ?>" target="_blank" rel="noopener"><i class="social-link-icon linkedin"></i></a>
+							<a href="<?php echo get_the_author_meta('linkedin'); ?>" target="_blank" title="LinkedIn" rel="noopener"><i class="social-link-icon linkedin"></i></a>
 						<?php endif; ?>
 						<?php if(get_the_author_meta('behance')): ?>
-							<a href="<?php echo get_the_author_meta('behance'); ?>" target="_blank" rel="noopener"><i class="social-link-icon behance"></i></a>
+							<a href="<?php echo get_the_author_meta('behance'); ?>" target="_blank" title="Behance" rel="noopener"><i class="social-link-icon behance"></i></a>
 						<?php endif; ?>
 						<?php if(get_the_author_meta('dribbble')): ?>
-							<a href="<?php echo get_the_author_meta('dribbble'); ?>" target="_blank" rel="noopener"><i class="social-link-icon dribbble"></i></a>
+							<a href="<?php echo get_the_author_meta('dribbble'); ?>" target="_blank" title="Dribbble" rel="noopener"><i class="social-link-icon dribbble"></i></a>
 						<?php endif; ?>
 						<?php if(get_the_author_meta('github')): ?>
-							<a href="<?php echo get_the_author_meta('github'); ?>" target="_blank" rel="noopener"><i class="social-link-icon github"></i></a>
+							<a href="<?php echo get_the_author_meta('github'); ?>" target="_blank" title="GitHub" rel="noopener"><i class="social-link-icon github"></i></a>
 						<?php endif; ?>
 						<?php if(get_the_author_meta('telegram')): ?>
-							<a href="<?php echo get_the_author_meta('telegram'); ?>" target="_blank" rel="noopener"><i class="social-link-icon telegram"></i></a>
+							<a href="<?php echo get_the_author_meta('telegram'); ?>" target="_blank" title="Telegram" rel="noopener"><i class="social-link-icon telegram"></i></a>
 						<?php endif; ?>
 					</div>
 				</div>
