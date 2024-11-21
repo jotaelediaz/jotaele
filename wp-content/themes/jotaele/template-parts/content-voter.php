@@ -9,16 +9,18 @@
 
 <div class="jotaele-likes-voter-wrapper single position-relative container">
 	<div class="jotaele-likes-voter">
-		<audio id="heartsound" preload="auto">
-			<source src="<?php echo get_stylesheet_directory_uri(); ?>/img/heartsound.mp3" type="audio/mp3">
-		</audio>
-		<?php /* <audio id="unheartsound" preload="auto"><source src="<?php echo get_stylesheet_directory_uri(); ?>/img/unheartsound.mp3" type="audio/mp3"></audio>	*/ ?>
 		<i class="heartfull"></i>
 		<?php
-		$linkVote = admin_url('admin-ajax.php?action=jotaele_likes_vote&post_id='.$post->ID);
-		$linkUnVote = admin_url('admin-ajax.php?action=jotaele_likes_unvote&post_id='.$post->ID);
-		echo '<button type="button" aria-labelledby="likevoter-label" class="user_vote wrapper-voto" data-post_id="' . $post->ID . '" href="' . $linkVote . '"><span id="likevoter-label" hidden>Me gusta este artículo</span></button>';
-		//echo '<button type="button" aria-labelledby="likeunvoter-label" class="user_unvote wrapper-voto" data-nonce="' . $nonce . '" data-post_id="' . $post->ID . '" href="' . $linkVote . '"><span id="likeunvoter-label" hidden>Retirar voto</span></button>';
+		
+		$nonceLike = wp_create_nonce( 'jotaele_likes_vote_nonce_'.$post->ID);
+		$nonceUnlike = wp_create_nonce( 'jotaele_likes_unvote_nonce_'.$post->ID);
+
+		$linkVote = admin_url('admin-ajax.php?action=jotaele_likes_vote&post_id='.$post->ID.'&nonce='.$nonceLike);
+		$linkUnvote = admin_url('admin-ajax.php?action=jotaele_likes_unvote&post_id='.$post->ID.'&nonce='.$nonceUnlike);
+		
+		echo '<button type="button" aria-labelledby="likevoter-label" class="user_vote wrapper-voto" data-post_id="' . $post->ID . '" href="' . $linkVote . '" data-nonce="' . $nonceLike . '"><span id="likevoter-label" hidden>Me gusta este artículo</span></button>';
+		
+		echo '<button type="button" aria-labelledby="likeunvoter-label" class="user_unvote wrapper-voto" data-nonce="' . $nonceUnlike . '" data-post_id="' . $post->ID . '" href="' . $linkUnvote . '"><span id="likeunvoter-label" hidden>Retirar voto</span></button>';
 		?>
 	</div>					
 </div>
